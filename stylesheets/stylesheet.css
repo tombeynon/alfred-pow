@@ -56,6 +56,10 @@ body {
   color: #6d6d6d;
 }
 
+p.center{
+	text-align:center;
+}
+
 a {
   color: #d5000d;
 }
@@ -151,7 +155,10 @@ a.button span {
   display: block;
   height: 23px;
 }
-
+#download-workflow span {
+  background: transparent url(../images/alfred-pow/alfred-workflow-icon-small.png) 12px 50% no-repeat;
+	padding-left:40px;
+}
 #download-zip span {
   background: transparent url(../images/zip-icon.png) 12px 50% no-repeat;
 }
