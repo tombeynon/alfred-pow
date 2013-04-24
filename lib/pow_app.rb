@@ -10,7 +10,7 @@ class PowApp
   def initialize(attributes = {})
     @name = attributes[:name]
     @path = attributes[:path]
-    @source_path = attributes[:source_path]
+    @source_path = attributes[:source_path],
     @url = "http://#{name}.dev"
     @xip_url = "http://#{name}.#{PowApp.local_ip}.xip.io"
   end
@@ -43,6 +43,20 @@ class PowApp
   def restart
     FileUtils.mkdir_p("#{path}/tmp")
     FileUtils.touch("#{path}/tmp/restart.txt")
+  end
+  
+  def environment
+    env = exec('osascript <<END
+      tell application "Alfred 2"
+      activate
+      set alfredPath to (path to application "Alfred 2")
+      set alfredIcon to path to resource "appicon.icns" in bundle (alfredPath as alias)
+      display dialog "Enter the environment":" with title "Enter environment" buttons {"OK"} default button "OK" default answer "" with icon alfredIcon with hidden answer
+      set answer to text returned of result
+      end tell
+    END');
+    envfile = File.new(path + "/.powenv", "w")
+    envfile.puts("export RAILS_ENV=#{env}")
   end
   
   def self.find(pow_path)
