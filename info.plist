@@ -177,7 +177,7 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
-				<string>require 'alfred_pow.rb'
+        <string>require './alfred_pow.rb'
 AlfredPow.xip "{query}"</string>
 				<key>type</key>
 				<integer>2</integer>
@@ -199,7 +199,7 @@ AlfredPow.xip "{query}"</string>
 				<key>runningsubtext</key>
 				<string>Loading results...</string>
 				<key>script</key>
-				<string>require 'alfred_pow.rb'
+        <string>require './alfred_pow.rb'
 AlfredPow.list "{query}"</string>
 				<key>subtext</key>
 				<string>Destroy Pow app</string>
@@ -244,7 +244,7 @@ AlfredPow.list "{query}"</string>
 				<key>runningsubtext</key>
 				<string>Loading results…</string>
 				<key>script</key>
-				<string>require 'alfred_pow.rb'
+        <string>require './alfred_pow.rb'
 AlfredPow.list "{query}"</string>
 				<key>subtext</key>
 				<string>Browse Pow app</string>
@@ -266,7 +266,7 @@ AlfredPow.list "{query}"</string>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
-				<string>require 'alfred_pow.rb'
+        <string>require './alfred_pow.rb'
 AlfredPow.browse "{query}"</string>
 				<key>type</key>
 				<integer>2</integer>
@@ -282,7 +282,7 @@ AlfredPow.browse "{query}"</string>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
-				<string>require 'alfred_pow.rb'
+        <string>require './alfred_pow.rb'
 AlfredPow.restart "{query}"</string>
 				<key>type</key>
 				<integer>2</integer>
@@ -298,7 +298,7 @@ AlfredPow.restart "{query}"</string>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
-				<string>require 'alfred_pow.rb'
+        <string>require './alfred_pow.rb'
 AlfredPow.create "{query}"</string>
 				<key>type</key>
 				<integer>2</integer>
@@ -314,7 +314,7 @@ AlfredPow.create "{query}"</string>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
-				<string>require 'alfred_pow.rb'
+        <string>require './alfred_pow.rb'
 AlfredPow.destroy "{query}"</string>
 				<key>type</key>
 				<integer>2</integer>
@@ -336,7 +336,7 @@ AlfredPow.destroy "{query}"</string>
 				<key>runningsubtext</key>
 				<string>Loading results...</string>
 				<key>script</key>
-				<string>require 'alfred_pow.rb'
+        <string>require './alfred_pow.rb'
 AlfredPow.list "{query}"</string>
 				<key>subtext</key>
 				<string>Restart Pow app</string>
@@ -364,7 +364,7 @@ AlfredPow.list "{query}"</string>
 				<key>runningsubtext</key>
 				<string>Loading results...</string>
 				<key>script</key>
-				<string>require 'alfred_pow.rb'
+        <string>require './alfred_pow.rb'
 AlfredPow.list "{query}"</string>
 				<key>subtext</key>
 				<string>Copy xip.io URL to clipboard</string>
