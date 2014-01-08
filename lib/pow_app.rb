@@ -55,11 +55,16 @@ class PowApp
     pow_app
   end
   
-  def self.search(keyword)
+  def self.search(keyword=nil)
     apps = []
-    found_apps = all_pow_apps.select { |app| app.match keyword }
+    if keyword.nil? || keyword == ""
+      found_apps = all_pow_apps
+    else
+      found_apps = all_pow_apps.select { |app| app.match keyword }
+    end
     found_apps.each do |app|
-      apps << find(File.expand_path(app, POW_PATH))
+      pow_app = find(File.expand_path(app, POW_PATH))
+      apps << pow_app unless pow_app.nil?
     end
     apps
   end
@@ -69,6 +74,7 @@ class PowApp
       Dir.chdir(POW_PATH)
       Dir.glob('*')
     end
+    @all_apps
   end
   
   def self.local_ip
