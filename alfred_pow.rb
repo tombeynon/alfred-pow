@@ -57,11 +57,18 @@ class AlfredPow
     found_apps = PowApp.search(keyword)
     doc = REXML::Document.new
     items = doc.add_element 'items'
-    found_apps.each do |app|
-      item = items.add_element('item', {'uid' => app.name, 'arg' => app.path})
-      item.add_element('title').add_text(app.name)
-      item.add_element('subtitle').add_text(app.url)
-      item.add_element('icon', {'type' => ''})
+    if found_apps.count() > 0 
+      found_apps.each do |app|
+        item = items.add_element('item', {'uid' => app.name, 'arg' => app.path})
+        item.add_element('title').add_text(app.name)
+        item.add_element('subtitle').add_text(app.url)
+        item.add_element('icon', {'type' => ''})
+      end
+    else
+        item = items.add_element('item', {'uid' => "999", 'arg' => "", 'valid' => 'no'})
+        item.add_element('title').add_text("Sorry, there are no POW sites here.")
+        item.add_element('subtitle').add_text("")
+        item.add_element('icon', {'type' => ''})      
     end
     puts doc.to_s
   end
